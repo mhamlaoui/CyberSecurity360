@@ -1,0 +1,32 @@
+<<<<<<< HEAD
+@import url("partials/_variables.css");
+@import url("partials/_base.css");
+@import url("partials/_layout.css");
+@import url("partials/_sidebar.css");
+@import url("partials/_navigation.css");
+@import url("partials/_components.css");
+@import url("partials/_forms.css");
+@import url("partials/_icons.css");
+@import url("partials/_dashboard.css");
+@import url("partials/_logo.css");
+@import url("partials/_responsive.css"); 
+@import url("partials/_chatbot.css");
+@import url("partials/_info.css");
+@import url("partials/_contact.css");
+
+=======
+@import url("partials/_variables.css");
+@import url("partials/_base.css");
+@import url("partials/_layout.css");
+@import url("partials/_sidebar.css");
+@import url("partials/_navigation.css");
+@import url("partials/_components.css");
+@import url("partials/_forms.css");
+@import url("partials/_icons.css");
+@import url("partials/_dashboard.css");
+@import url("partials/_logo.css");
+@import url("partials/_responsive.css");
+@import url("partials/_prediction.css");
+@import url("partials/_contact.css");
+@import url("partials/_info.css");
+>>>>>>> 05238f3a83981a3c4a40aa1103d176ca2d031b9c

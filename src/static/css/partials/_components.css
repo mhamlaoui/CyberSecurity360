@@ -1,0 +1,116 @@
+<<<<<<< HEAD
+/* Composants */
+.feature-cards {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: var(--card-gradient);
+  border-radius: var(--card-radius);
+  padding: 32px 28px 28px 28px;
+  min-width: 320px;
+  max-width: 370px;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18);
+}
+
+.card-content {
+  font-size: 1.08rem;
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+
+.feature-button {
+  display: flex;
+  align-items: center;  
+  gap: 10px;
+  background: var(--button-gradient);
+  color: var(--white);
+  border: none;
+  border-radius: var(--button-radius);
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border 0.2s, background 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(123,99,255,0.15);
+  text-decoration: none;
+}
+
+.feature-button:hover {
+  background: linear-gradient(90deg, #b47aff 0%, #6d8cff 100%);
+  border: none;
+  box-shadow: 0 4px 16px 0 rgba(123,99,255,0.22);
+}
+
+.feature-button:active,
+.feature-button:focus {
+  outline: none;
+  border: 2px solid var(--button-active-border);
+=======
+/* Composants */
+.feature-cards {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: var(--card-gradient);
+  border-radius: var(--card-radius);
+  padding: 32px 28px 28px 28px;
+  min-width: 320px;
+  max-width: 370px;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18);
+}
+
+.card-content {
+  font-size: 1.08rem;
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+
+.feature-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--button-gradient);
+  color: var(--white);
+  border: none;
+  border-radius: var(--button-radius);
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border 0.2s, background 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(123,99,255,0.15);
+  text-decoration: none;
+}
+
+.feature-button:hover {
+  background: linear-gradient(90deg, #b47aff 0%, #6d8cff 100%);
+  border: none;
+  box-shadow: 0 4px 16px 0 rgba(123,99,255,0.22);
+}
+
+.feature-button:active,
+.feature-button:focus {
+  outline: none;
+  border: 2px solid var(--button-active-border);
+>>>>>>> 05238f3a83981a3c4a40aa1103d176ca2d031b9c
+}

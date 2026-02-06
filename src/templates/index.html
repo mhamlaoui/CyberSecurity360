@@ -1,0 +1,186 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>CS-360 - Centre de commandement pour les cybermenaces</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500,700|Poppins:500,900" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <span class="sidebar-logo"></span>
+          <div class="sidebar-title-group">
+            <span class="sidebar-title">CS-360</span>
+          </div>
+        </div>
+        <nav class="nav-menu">
+          <a href="{{ url_for('index') }}" class="nav-item active">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeAccueil.png') }}" alt="Accueil"></span>
+            <span class="nav-label">Accueil</span>
+          </a>
+          <a href="{{ url_for('dashboard') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeTableauDeBord.png') }}" alt="Tableau de bord"></span>
+            <span class="nav-label">Tableau de bord</span>
+          </a>
+          <a href="{{ url_for('chatbot') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeChatBot.png') }}" alt="Chat Bot"></span>
+            <span class="nav-label">Chat Bot</span>
+          </a>
+          <a href="{{ url_for('info') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeInformations.png') }}" alt="Informations"></span>
+            <span class="nav-label">Informations</span>
+          </a>
+          <a href="{{ url_for('contact') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeContact.png') }}" alt="Contact"></span>
+            <span class="nav-label">Contact</span>
+          </a>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <h1 class="main-title">VOTRE CENTRE DE COMMANDEMENT POUR LES CYBERMENACES</h1>
+        <div class="main-intro">
+          <p>Nous surveillons en permanence les événements à haut risque, les comportements utilisateurs et les activités suspectes pour vous aider à anticiper les potentielles violations de sécurité.</p>
+          <p>Plongez dans des analyses en temps réel, explorez les vecteurs de menace et assurez la conformité et la sécurité de votre environnement.<br>La sécurité n'est pas une destination — c'est un voyage. Faisons-le ensemble.</p>
+        </div>
+
+        <div class="feature-cards">
+          <div class="card">
+            <div class="card-content">
+              Visualisez les données sur les cybermenaces en temps réel et suivez les tendances pour prendre des décisions éclairées.
+            </div>
+            <a href="{{ url_for('dashboard') }}" class="feature-button">
+              <span class="feature-icon"><img src="{{ url_for('static', filename='images/icones/iconeTableauDeBord.png') }}" alt="Tableau de bord"></span>
+              <span>Tableau de bord</span>
+            </a>
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              Interagissez avec notre chatbot pour obtenir des réponses à vos questions sur les cybermenaces et les mesures de sécurité.
+            </div>
+            <a href="{{ url_for('chatbot') }}" class="feature-button">
+              <span class="feature-icon"><img src="{{ url_for('static', filename='images/icones/iconeChatBot.png') }}" alt="Chat Bot"></span>
+              <span>Chat Bot</span>
+            </a>
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              Découvrez des informations sur les cybermenaces et les meilleures pratiques.
+            </div>
+            <a href="{{ url_for('info') }}" class="feature-button">
+              <span class="feature-icon"><img src="{{ url_for('static', filename='images/icones/iconeInformations.png') }}" alt="Informations"></span>
+              <span>Informations</span>
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+=======
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>CS-360 - Centre de commandement pour les cybermenaces</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500,700|Poppins:500,900" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+  </head>
+  <body>  
+    <div class="container">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-title-group">
+            <span class="sidebar-logo"><img src="{{ url_for('static', filename='images/logoCS.png') }}" alt="CS-360 Logo"></span>
+            <span class="sidebar-title">CS-360</span>
+          </div>
+        </div>
+        <nav class="nav-menu">
+          <a href="{{ url_for('index') }}" class="nav-item active">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeAccueil.png') }}" alt="Accueil"></span>
+            <span class="nav-label">Accueil</span>
+          </a>
+          <a href="{{ url_for('dashboard') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeTableauDeBord.png') }}" alt="Tableau de bord"></span>
+            <span class="nav-label">Tableau de bord</span>
+          </a>
+          <a href="{{ url_for('chatbot') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeChatBot.png') }}" alt="Chat Bot"></span>
+            <span class="nav-label">Chat Bot</span>
+          </a>
+          <a href="{{ url_for('prediction') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconePrediction.png') }}" alt="Prédiction"></span>
+            <span class="nav-label">Prédiction</span>
+          </a>
+          <a href="{{ url_for('info') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeInformations.png') }}" alt="Informations"></span>
+            <span class="nav-label">Informations</span>
+          </a>
+          <a href="{{ url_for('contact') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeContact.png') }}" alt="Contact"></span>
+            <span class="nav-label">Contact</span>
+          </a>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <h1 class="main-title">VOTRE CENTRE DE COMMANDEMENT POUR LES CYBERMENACES</h1>
+        <div class="main-intro">
+          <p>Nous surveillons en permanence les événements à haut risque, les comportements utilisateurs et les activités suspectes pour vous aider à anticiper les potentielles violations de sécurité.</p>
+          <p>Plongez dans des analyses en temps réel, explorez les vecteurs de menace et assurez la conformité et la sécurité de votre environnement.<br>La sécurité n'est pas une destination — c'est un voyage. Faisons-le ensemble.</p>
+        </div>
+
+        <div class="feature-cards">
+          <div class="card">
+            <div class="card-content">
+              Visualisez les données sur les cybermenaces en temps réel et suivez les tendances pour prendre des décisions éclairées.
+            </div>
+            <a href="{{ url_for('dashboard') }}" class="feature-button">
+              <span class="feature-icon"><img src="{{ url_for('static', filename='images/icones/iconeTableauDeBord.png') }}" alt="Tableau de bord"></span>
+              <span>Tableau de bord</span>
+            </a>
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              Interagissez avec notre chatbot pour obtenir des réponses à vos questions sur les cybermenaces et les mesures de sécurité.
+            </div>
+            <a href="{{ url_for('chatbot') }}" class="feature-button">
+              <span class="feature-icon"><img src="{{ url_for('static', filename='images/icones/iconeChatBot.png') }}" alt="Chat Bot"></span>
+              <span>Chat Bot</span>
+            </a>
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              Estimez les impacts financiers potentiels des cyberattaques grâce à notre modèle de prédiction avancé.
+            </div>
+            <a href="{{ url_for('prediction') }}" class="feature-button">
+              <span class="feature-icon"><img src="{{ url_for('static', filename='images/icones/iconePrediction.png') }}" alt="Prédiction"></span>
+              <span>Prédiction</span>
+            </a>
+          </div>
+
+          <div class="card">
+            <div class="card-content">
+              Découvrez des informations sur les cybermenaces et les meilleures pratiques.
+            </div>
+            <a href="{{ url_for('info') }}" class="feature-button">
+              <span class="feature-icon"><img src="{{ url_for('static', filename='images/icones/iconeInformations.png') }}" alt="Informations"></span>
+              <span>Informations</span>
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+>>>>>>> 05238f3a83981a3c4a40aa1103d176ca2d031b9c
+</html>

@@ -1,0 +1,112 @@
+<<<<<<< HEAD
+/* Styles de navigation */
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0;
+  position: static;
+}
+
+.nav-item {
+  border-radius: 5px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 40px;
+  color: var(--white);
+  font-family: "Roboto-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: background 0.2s, border 0.2s;
+}
+
+.nav-item.active {
+  background: var(--sidebar-active);
+  border-radius: 5px;
+  border: 2px solid #5a10bb;
+  color: var(--white);
+}
+
+.nav-item:hover:not(.active) {
+  background: var(--sidebar-active);
+  border-radius: 5px;
+  border: 2px solid #5a10bb;
+  color: var(--white);
+  opacity: 0.9;
+}
+
+.nav-label {
+  color: var(--white);
+  text-align: left;
+  font-family: "Roboto-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+=======
+/* Styles de navigation */
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0;
+  position: static;
+}
+
+.nav-item {
+  border-radius: 5px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 40px;
+  color: var(--white);
+  font-family: "Roboto-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: background 0.2s, border 0.2s;
+}
+
+.nav-item.active {
+  background: var(--sidebar-active);
+  border-radius: 5px;
+  border: 2px solid #5a10bb;
+  color: var(--white);
+}
+
+.nav-item:hover:not(.active) {
+  background: var(--sidebar-active);
+  border-radius: 5px;
+  border: 2px solid #5a10bb;
+  color: var(--white);
+  opacity: 0.9;
+}
+
+.nav-label {
+  color: var(--white);
+  text-align: left;
+  font-family: "Roboto-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+>>>>>>> 05238f3a83981a3c4a40aa1103d176ca2d031b9c
+}

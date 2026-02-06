@@ -1,0 +1,28 @@
+<<<<<<< HEAD
+:root {
+  --sidebar-bg: #2d2566;
+  --sidebar-width: 200px;
+  --main-bg: #1f1b44;
+  --card-gradient: linear-gradient(120deg, #23243a 0%, #3b3e7a 100%);
+  --card-radius: 24px;
+  --button-gradient: linear-gradient(90deg, #a259ff 0%, #5d5fef 100%);
+  --button-radius: 10px;
+  --button-active-border: #7b3ffb;
+  --button-hover-border: #181818;
+  --white: #fff;
+  --sidebar-active: linear-gradient(270deg, rgba(108, 99, 255, 1) 4.8%, rgba(62, 198, 255, 1) 100%);
+=======
+:root {
+  --sidebar-bg: #2d2566;
+  --sidebar-width: 200px;
+  --main-bg: #1f1b44;
+  --card-gradient: linear-gradient(120deg, #23243a 0%, #3b3e7a 100%);
+  --card-radius: 24px;
+  --button-gradient: linear-gradient(90deg, #a259ff 0%, #5d5fef 100%);
+  --button-radius: 10px;
+  --button-active-border: #7b3ffb;
+  --button-hover-border: #181818;
+  --white: #fff;
+  --sidebar-active: linear-gradient(270deg, rgba(108, 99, 255, 1) 4.8%, rgba(62, 198, 255, 1) 100%);
+>>>>>>> 05238f3a83981a3c4a40aa1103d176ca2d031b9c
+}

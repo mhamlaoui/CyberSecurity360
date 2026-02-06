@@ -1,0 +1,433 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>CS-360 - Informations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500,700|Poppins:500,900" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <span class="sidebar-logo"></span>
+          <div class="sidebar-title-group">
+            <span class="sidebar-title">CS-360</span>
+          </div>
+        </div>
+        <nav class="nav-menu">
+          <a href="{{ url_for('index') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeAccueil.png') }}" alt="Accueil"></span>
+            <span class="nav-label">Accueil</span>
+          </a>
+          <a href="{{ url_for('dashboard') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeTableauDeBord.png') }}" alt="Tableau de bord"></span>
+            <span class="nav-label">Tableau de bord</span>
+          </a>
+          <a href="{{ url_for('chatbot') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeChatBot.png') }}" alt="Chat Bot"></span>
+            <span class="nav-label">Chat Bot</span>
+          </a>
+          <a href="{{ url_for('info') }}" class="nav-item active">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeInformations.png') }}" alt="Informations"></span>
+            <span class="nav-label">Informations</span>
+          </a>
+          <a href="{{ url_for('contact') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeContact.png') }}" alt="Contact"></span>
+            <span class="nav-label">Contact</span>
+          </a>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <h1 class="main-title">INFORMATIONS</h1>
+        <div class="info-container">
+          <div class="info-left-panel">
+            <div class="attack-section">
+              <h2>DDoS (Distributed Denial of Service)</h2>
+              <img src="{{ url_for('static', filename='images/types_attaques/DDoS.png') }}" alt="DDoS">
+              <h3>Définition</h3>
+              <p>Une attaque en déni de service ou en déni de service distribué (DDoS pour <em>Distributed Denial of Service</em> en anglais) vise à rendre inaccessible un serveur par l'envoi de multiples requêtes jusqu'à le saturer ou par l'exploitation d'une faille de sécurité afin de provoquer une panne ou un fonctionnement fortement dégradé du service.</p>
+              
+              <h3>Comment ça fonctionne ?</h3>
+              <p>Les attaquants créent un <strong>botnet</strong> en infectant des appareils connectés (PC, IoT, routeurs…) avec des malwares. Ce réseau, contrôlé à distance, sert à lancer des attaques DDoS en inondant une cible de trafic.</p>
+              
+              <h3>Types d'attaques DDoS</h3>
+              <ul>
+                <li><strong>Attaques volumétriques</strong> : saturent la bande passante avec un très grand volume de trafic</li>
+                <li><strong>Attaques de protocole</strong> : exploitent des failles des protocoles réseau pour épuiser les ressources</li>
+                <li><strong>Attaques applicatives (couche 7)</strong> : ciblent des applications web avec des requêtes légitimes en apparence</li>
+              </ul>
+            </div>
+
+            <div class="attack-section">
+              <h2>Phishing</h2>
+              <img src="{{ url_for('static', filename='images/types_attaques/Phishing.png') }}" alt="Phishing">
+              <h3>Définition</h3>
+              <p>Le terme <strong>phishing</strong> fait référence aux tentatives de vol d'informations sensibles, telles que des noms d'utilisateur, mots de passe, numéros de carte bancaire ou d'autres données confidentielles, dans le but de les utiliser ou de les vendre.</p>
+              
+              <h3>Comment ça fonctionne ?</h3>
+              <p>Dans une attaque typique, le criminel collecte les coordonnées d'une ou plusieurs cibles, puis envoie des messages de phishing par <strong>email</strong> ou <strong>SMS</strong>.</p>
+              
+              <h3>Types d'attaques phishing</h3>
+              <ul>
+                <li><strong>Spear phishing</strong> : attaque ciblée sur une personne précise</li>
+                <li><strong>Whaling</strong> : forme de spear phishing visant des dirigeants</li>
+                <li><strong>BEC (Business Email Compromise)</strong> : usurpation d'un cadre pour détourner des paiements</li>
+              </ul>
+            </div>
+
+            <div class="attack-section">
+              <h2>SQL Injection</h2>
+              <img src="{{ url_for('static', filename='images/types_attaques/SQL.png') }}" alt="SQL Injection">
+              <h3>Définition</h3>
+              <p>Les attaques par <strong>injection SQL</strong> exploitent les failles de sécurité d'une application qui interagit avec des bases de données.</p>
+              
+              <h3>Comment ça fonctionne ?</h3>
+              <p>Une application web insère directement des données saisies par l'utilisateur dans une requête SQL <strong>sans vérification ni filtrage</strong>.</p>
+              
+              <h3>Types d'attaques SQL Injection</h3>
+              <ul>
+                <li><strong>SQLi en bande</strong> : exploite les messages d'erreur de la base</li>
+                <li><strong>SQLi aveugle</strong> : déduit les infos selon si la réponse change ou non</li>
+                <li><strong>SQLi hors bande</strong> : exploite des fonctions du serveur pour exfiltrer les données</li>
+              </ul>
+            </div>
+
+            <div class="attack-section">
+              <h2>Ransomware</h2>
+              <img src="{{ url_for('static', filename='images/types_attaques/Ranso.png') }}" alt="Ransomware">
+              <h3>Définition</h3>
+              <p>Les <strong>rançongiciels</strong> (ou <strong>ransomwares</strong>) sont des logiciels malveillants qui bloquent l'accès à un ordinateur ou à des fichiers en les <strong>chiffrant</strong>, puis réclament à la victime le <strong>paiement d'une rançon</strong> pour en retrouver l'accès.</p>
+              
+              <h3>Comment ça fonctionne ?</h3>
+              <p>L'infection peut survenir après l'ouverture d'une <strong>pièce jointe piégée</strong>, en cliquant sur un <strong>lien malveillant</strong>, en <strong>naviguant sur un site compromis</strong>, ou suite à une <strong>intrusion</strong> dans le système.</p>
+              
+              <h3>Types d'attaques par ransomware</h3>
+              <ul>
+                <li><strong>Chiffrement</strong> : les fichiers sont chiffrés et une rançon est exigée</li>
+                <li><strong>Verrouillage</strong> : l'accès à l'ordinateur est complètement bloqué</li>
+                <li><strong>Extorsion</strong> : l'attaquant menace de divulguer les données volées</li>
+              </ul>
+            </div>
+
+            <div class="attack-section">
+              <h2>Malware</h2>
+              <img src="{{ url_for('static', filename='images/types_attaques/Malware.png') }}" alt="Malware">
+              <h3>Définition</h3>
+              <p>Un <strong>malware</strong> (ou logiciel malveillant) est un programme conçu pour <strong>infiltrer</strong>, <strong>perturber</strong> ou <strong>endommager</strong> un ordinateur ou un réseau, généralement <strong>à l'insu du propriétaire</strong>.</p>
+              
+              <h3>Types d'attaques par malware</h3>
+              <ul>
+                <li><strong>Virus</strong> : se propage via des fichiers et infecte d'autres programmes</li>
+                <li><strong>Vers (Worms)</strong> : se propagent automatiquement sur un réseau</li>
+                <li><strong>Chevaux de Troie (Trojans)</strong> : se présentent comme des logiciels légitimes</li>
+              </ul>
+            </div>
+
+            <div class="attack-section">
+              <h2>Man-in-the-Middle (MITM)</h2>
+              <img src="{{ url_for('static', filename='images/types_attaques/MITM.png') }}" alt="MITM">
+              <h3>Définition</h3>
+              <p>Une attaque <strong>Man-in-the-Middle (MITM)</strong> se produit lorsqu'un <strong>attaquant s'interpose secrètement</strong> entre deux parties qui communiquent, dans le but d'intercepter, d'espionner, d'altérer ou de rediriger leurs échanges de données.</p>
+              
+              <h3>Types d'attaques MITM</h3>
+              <ul>
+                <li><strong>Interception de communication</strong> : intercepte les données échangées</li>
+                <li><strong>Injection de contenu</strong> : modifie le contenu transmis</li>
+                <li><strong>Attaque de redirection</strong> : redirige vers un faux site Web</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="info-right-panel">
+            <div class="report-section">
+              <h2>Rapport d'Analyse des Menaces de Cybersécurité (2015–2024)</h2>
+              
+              <h3>Résumé</h3>
+              <p>Ce projet présente une analyse des menaces de cybersécurité mondiales sur une période de 10 ans, basée sur des incidents de cybersécurité répertoriés dans différents pays, secteurs et types d'attaques. L'objectif est d'identifier les tendances, les vulnérabilités prédominantes et les stratégies de défense les plus efficaces face à l'évolution des menaces.</p>
+
+              <h3>Source des données</h3>
+              <p>Les données utilisées dans ce projet proviennent d'une base de données accessible sur Kaggle, une plateforme de données bien connue. Cette base contient un ensemble d'incidents de cybersécurité répertoriés sur une période de 10 ans (2015–2024).</p>
+
+              <h3>Description de la base de données</h3>
+              <img src="{{ url_for('static', filename='images/exemple_donnees.png') }}">
+              <ul>
+                <li><strong>Pays</strong> : Localisation géographique de l'incident</li>
+                <li><strong>Année</strong> : Période temporelle de l'incident (2015–2024)</li>
+                <li><strong>Type d'attaque</strong> : Méthodologie utilisée par les attaquants</li>
+                <li><strong>Secteur ciblé</strong> : Secteur économique affecté</li>
+                <li><strong>Pertes financières</strong> : Impact économique en millions de dollars</li>
+                <li><strong>Nombre d'utilisateurs affectés</strong> : Impact sur les individus</li>
+              </ul>
+
+              <h3>Aperçu des Tendances Principales</h3>
+              
+              <h4>Distribution géographique des incidents</h4>
+              <p>Les attaques sont concentrées dans des pays technologiquement avancés, tels que la Chine, les États-Unis, le Royaume-Uni, l'Allemagne et l'Inde.</p>
+
+              <h4>Évolution temporelle (2015–2024)</h4>
+              <ul>
+                <li><strong>2015–2017</strong> : Attaques principalement basées sur l'hameçonnage</li>
+                <li><strong>2018–2020</strong> : Augmentation des rançongiciels</li>
+                <li><strong>2021–2024</strong> : Apparition d'attaques plus sophistiquées</li>
+              </ul>
+
+              <h4>Industries ciblées</h4>
+              <ul>
+                <li><strong>Secteur bancaire et financier</strong> : Cible principale</li>
+                <li><strong>Gouvernement</strong> : Cible d'attaques sophistiquées</li>
+                <li><strong>Éducation</strong> : Ciblée par des attaques de phishing</li>
+                <li><strong>Télécommunications</strong> : Souvent visées par des attaques DDoS</li>
+              </ul>
+
+              <h4>Sources des attaques</h4>
+              <ul>
+                <li><strong>Groupes de hackers</strong> : Motivés par des gains financiers</li>
+                <li><strong>États-nations</strong> : Attaques d'espionnage ou de sabotage</li>
+                <li><strong>Menaces internes</strong> : Risque important, difficile à détecter</li>
+              </ul>
+
+              <h4>Mécanismes de défense</h4>
+              <ul>
+                <li>Réseaux privés virtuels (VPN)</li>
+                <li>Pare-feu</li>
+                <li>Solutions antivirus</li>
+                <li>Détection basée sur l'IA</li>
+              </ul>
+
+              <h3>Analyse des Impacts</h3>
+              <h4>Impact financier</h4>
+              <p>Les pertes variant de quelques dizaines à plusieurs centaines de millions de dollars. Les secteurs bancaire, financier et de la santé sont les plus affectés.</p>
+
+              <h4>Impact sur les utilisateurs</h4>
+              <p>Les incidents touchent des millions d'utilisateurs, avec des conséquences graves lorsque des données sensibles sont compromises.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+=======
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>CS-360 - Informations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500,700|Poppins:500,900" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-title-group">
+            <span class="sidebar-logo"><img src="{{ url_for('static', filename='images/logoCS.png') }}" alt="CS-360 Logo"></span>
+            <span class="sidebar-title">CS-360</span>
+          </div>
+        </div>
+        <nav class="nav-menu">
+          <a href="{{ url_for('index') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeAccueil.png') }}" alt="Accueil"></span>
+            <span class="nav-label">Accueil</span>
+          </a>
+          <a href="{{ url_for('dashboard') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeTableauDeBord.png') }}" alt="Tableau de bord"></span>
+            <span class="nav-label">Tableau de bord</span>
+          </a>
+          <a href="{{ url_for('chatbot') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeChatBot.png') }}" alt="Chat Bot"></span>
+            <span class="nav-label">Chat Bot</span>
+          </a>
+          <a href="{{ url_for('prediction') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconePrediction.png') }}" alt="Prédiction"></span>
+            <span class="nav-label">Prédiction</span>
+          </a>
+          <a href="{{ url_for('info') }}" class="nav-item active">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeInformations.png') }}" alt="Informations"></span>
+            <span class="nav-label">Informations</span>
+          </a>
+          <a href="{{ url_for('contact') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeContact.png') }}" alt="Contact"></span>
+            <span class="nav-label">Contact</span>
+          </a>
+        </nav>
+      </aside>
+
+
+      <main class="main-content">
+        <h1 class="main-title">INFORMATIONS</h1>
+        <div class="info-container">
+          <div class="info-left-panel">
+            <div class="attack-section">
+              <h2>DDoS (Distributed Denial of Service)</h2>
+              <img src="{{ url_for('static', filename='images/types_attaques/DDoS.png') }}" alt="DDoS">
+              <h3>Définition</h3>
+              <p>Une attaque en déni de service ou en déni de service distribué (DDoS pour <em>Distributed Denial of Service</em> en anglais) vise à rendre inaccessible un serveur par l'envoi de multiples requêtes jusqu'à le saturer ou par l'exploitation d'une faille de sécurité afin de provoquer une panne ou un fonctionnement fortement dégradé du service.</p>
+              
+              <h3>Comment ça fonctionne ?</h3>
+              <p>Les attaquants créent un <strong>botnet</strong> en infectant des appareils connectés (PC, IoT, routeurs…) avec des malwares. Ce réseau, contrôlé à distance, sert à lancer des attaques DDoS en inondant une cible de trafic.</p>
+              
+              <h3>Types d'attaques DDoS</h3>
+              <ul>
+                <li><strong>Attaques volumétriques</strong> : saturent la bande passante avec un très grand volume de trafic</li>
+                <li><strong>Attaques de protocole</strong> : exploitent des failles des protocoles réseau pour épuiser les ressources</li>
+                <li><strong>Attaques applicatives (couche 7)</strong> : ciblent des applications web avec des requêtes légitimes en apparence</li>
+              </ul>
+            </div>
+
+            <div class="attack-section">
+              <h2>Phishing</h2>
+              <img src="{{ url_for('static', filename='images/types_attaques/Phishing.png') }}" alt="Phishing">
+              <h3>Définition</h3>
+              <p>Le terme <strong>phishing</strong> fait référence aux tentatives de vol d'informations sensibles, telles que des noms d'utilisateur, mots de passe, numéros de carte bancaire ou d'autres données confidentielles, dans le but de les utiliser ou de les vendre.</p>
+              
+              <h3>Comment ça fonctionne ?</h3>
+              <p>Dans une attaque typique, le criminel collecte les coordonnées d'une ou plusieurs cibles, puis envoie des messages de phishing par <strong>email</strong> ou <strong>SMS</strong>.</p>
+              
+              <h3>Types d'attaques phishing</h3>
+              <ul>
+                <li><strong>Spear phishing</strong> : attaque ciblée sur une personne précise</li>
+                <li><strong>Whaling</strong> : forme de spear phishing visant des dirigeants</li>
+                <li><strong>BEC (Business Email Compromise)</strong> : usurpation d'un cadre pour détourner des paiements</li>
+              </ul>
+            </div>
+
+            <div class="attack-section">
+              <h2>SQL Injection</h2>
+              <img src="{{ url_for('static', filename='images/types_attaques/SQL.png') }}" alt="SQL Injection">
+              <h3>Définition</h3>
+              <p>Les attaques par <strong>injection SQL</strong> exploitent les failles de sécurité d'une application qui interagit avec des bases de données.</p>
+              
+              <h3>Comment ça fonctionne ?</h3>
+              <p>Une application web insère directement des données saisies par l'utilisateur dans une requête SQL <strong>sans vérification ni filtrage</strong>.</p>
+              
+              <h3>Types d'attaques SQL Injection</h3>
+              <ul>
+                <li><strong>SQLi en bande</strong> : exploite les messages d'erreur de la base</li>
+                <li><strong>SQLi aveugle</strong> : déduit les infos selon si la réponse change ou non</li>
+                <li><strong>SQLi hors bande</strong> : exploite des fonctions du serveur pour exfiltrer les données</li>
+              </ul>
+            </div>
+
+            <div class="attack-section">
+              <h2>Ransomware</h2>
+              <img src="{{ url_for('static', filename='images/types_attaques/Ranso.png') }}" alt="Ransomware">
+              <h3>Définition</h3>
+              <p>Les <strong>rançongiciels</strong> (ou <strong>ransomwares</strong>) sont des logiciels malveillants qui bloquent l'accès à un ordinateur ou à des fichiers en les <strong>chiffrant</strong>, puis réclament à la victime le <strong>paiement d'une rançon</strong> pour en retrouver l'accès.</p>
+              
+              <h3>Comment ça fonctionne ?</h3>
+              <p>L'infection peut survenir après l'ouverture d'une <strong>pièce jointe piégée</strong>, en cliquant sur un <strong>lien malveillant</strong>, en <strong>naviguant sur un site compromis</strong>, ou suite à une <strong>intrusion</strong> dans le système.</p>
+              
+              <h3>Types d'attaques par ransomware</h3>
+              <ul>
+                <li><strong>Chiffrement</strong> : les fichiers sont chiffrés et une rançon est exigée</li>
+                <li><strong>Verrouillage</strong> : l'accès à l'ordinateur est complètement bloqué</li>
+                <li><strong>Extorsion</strong> : l'attaquant menace de divulguer les données volées</li>
+              </ul>
+            </div>
+
+            <div class="attack-section">
+              <h2>Malware</h2>
+              <img src="{{ url_for('static', filename='images/types_attaques/Malware.png') }}" alt="Malware">
+              <h3>Définition</h3>
+              <p>Un <strong>malware</strong> (ou logiciel malveillant) est un programme conçu pour <strong>infiltrer</strong>, <strong>perturber</strong> ou <strong>endommager</strong> un ordinateur ou un réseau, généralement <strong>à l'insu du propriétaire</strong>.</p>
+              
+              <h3>Types d'attaques par malware</h3>
+              <ul>
+                <li><strong>Virus</strong> : se propage via des fichiers et infecte d'autres programmes</li>
+                <li><strong>Vers (Worms)</strong> : se propagent automatiquement sur un réseau</li>
+                <li><strong>Chevaux de Troie (Trojans)</strong> : se présentent comme des logiciels légitimes</li>
+              </ul>
+            </div>
+
+            <div class="attack-section">
+              <h2>Man-in-the-Middle (MITM)</h2>
+              <img src="{{ url_for('static', filename='images/types_attaques/MITM.png') }}" alt="MITM">
+              <h3>Définition</h3>
+              <p>Une attaque <strong>Man-in-the-Middle (MITM)</strong> se produit lorsqu'un <strong>attaquant s'interpose secrètement</strong> entre deux parties qui communiquent, dans le but d'intercepter, d'espionner, d'altérer ou de rediriger leurs échanges de données.</p>
+              
+              <h3>Types d'attaques MITM</h3>
+              <ul>
+                <li><strong>Interception de communication</strong> : intercepte les données échangées</li>
+                <li><strong>Injection de contenu</strong> : modifie le contenu transmis</li>
+                <li><strong>Attaque de redirection</strong> : redirige vers un faux site Web</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="info-right-panel">
+            <div class="report-section">
+              <h2>Rapport d'Analyse des Menaces de Cybersécurité (2015–2024)</h2>
+              
+              <h3>Résumé</h3>
+              <p>Ce projet présente une analyse des menaces de cybersécurité mondiales sur une période de 10 ans, basée sur des incidents de cybersécurité répertoriés dans différents pays, secteurs et types d'attaques. L'objectif est d'identifier les tendances, les vulnérabilités prédominantes et les stratégies de défense les plus efficaces face à l'évolution des menaces.</p>
+
+              <h3>Source des données</h3>
+              <p>Les données utilisées dans ce projet proviennent d'une base de données accessible sur Kaggle, une plateforme de données bien connue. Cette base contient un ensemble d'incidents de cybersécurité répertoriés sur une période de 10 ans (2015–2024).</p>
+
+              <h3>Description de la base de données</h3>
+              <img src="{{ url_for('static', filename='images/exemple_donnees.png') }}">
+              <ul>
+                <li><strong>Pays</strong> : Localisation géographique de l'incident</li>
+                <li><strong>Année</strong> : Période temporelle de l'incident (2015–2024)</li>
+                <li><strong>Type d'attaque</strong> : Méthodologie utilisée par les attaquants</li>
+                <li><strong>Secteur ciblé</strong> : Secteur économique affecté</li>
+                <li><strong>Pertes financières</strong> : Impact économique en millions de dollars</li>
+                <li><strong>Nombre d'utilisateurs affectés</strong> : Impact sur les individus</li>
+              </ul>
+
+              <h3>Aperçu des Tendances Principales</h3>
+              
+              <h4>Distribution géographique des incidents</h4>
+              <p>Les attaques sont concentrées dans des pays technologiquement avancés, tels que la Chine, les États-Unis, le Royaume-Uni, l'Allemagne et l'Inde.</p>
+
+              <h4>Évolution temporelle (2015–2024)</h4>
+              <ul>
+                <li><strong>2015–2017</strong> : Attaques principalement basées sur l'hameçonnage</li>
+                <li><strong>2018–2020</strong> : Augmentation des rançongiciels</li>
+                <li><strong>2021–2024</strong> : Apparition d'attaques plus sophistiquées</li>
+              </ul>
+
+              <h4>Industries ciblées</h4>
+              <ul>
+                <li><strong>Secteur bancaire et financier</strong> : Cible principale</li>
+                <li><strong>Gouvernement</strong> : Cible d'attaques sophistiquées</li>
+                <li><strong>Éducation</strong> : Ciblée par des attaques de phishing</li>
+                <li><strong>Télécommunications</strong> : Souvent visées par des attaques DDoS</li>
+              </ul>
+
+              <h4>Sources des attaques</h4>
+              <ul>
+                <li><strong>Groupes de hackers</strong> : Motivés par des gains financiers</li>
+                <li><strong>États-nations</strong> : Attaques d'espionnage ou de sabotage</li>
+                <li><strong>Menaces internes</strong> : Risque important, difficile à détecter</li>
+              </ul>
+
+              <h4>Mécanismes de défense</h4>
+              <ul>
+                <li>Réseaux privés virtuels (VPN)</li>
+                <li>Pare-feu</li>
+                <li>Solutions antivirus</li>
+                <li>Détection basée sur l'IA</li>
+              </ul>
+
+              <h3>Analyse des Impacts</h3>
+              <h4>Impact financier</h4>
+              <p>Les pertes variant de quelques dizaines à plusieurs centaines de millions de dollars. Les secteurs bancaire, financier et de la santé sont les plus affectés.</p>
+
+              <h4>Impact sur les utilisateurs</h4>
+              <p>Les incidents touchent des millions d'utilisateurs, avec des conséquences graves lorsque des données sensibles sont compromises.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+>>>>>>> 05238f3a83981a3c4a40aa1103d176ca2d031b9c
+</html> 

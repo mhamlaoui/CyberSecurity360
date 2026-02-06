@@ -1,0 +1,7 @@
+.DS_Store
+.DS_Store
+src/models/Llama-3.2-1B-Instruct-Q4_0.gguf
+<<<<<<< HEAD
+=======
+src/models/
+>>>>>>> 05238f3a83981a3c4a40aa1103d176ca2d031b9c

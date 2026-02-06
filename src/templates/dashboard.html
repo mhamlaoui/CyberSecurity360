@@ -1,0 +1,156 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>CS-360 - Tableau de bord</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:500,700|Poppins:500,900" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+  <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-logo"></span>
+        <div class="sidebar-title-group">
+          <span class="sidebar-title">CS-360</span>
+        </div>
+      </div>
+      <nav class="nav-menu">
+        <a href="{{ url_for('index') }}" class="nav-item">
+          <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeAccueil.png') }}" alt="Accueil"></span>
+          <span class="nav-label">Accueil</span>
+        </a>
+        <a href="{{ url_for('dashboard') }}" class="nav-item active">
+          <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeTableauDeBord.png') }}" alt="Tableau de bord"></span>
+          <span class="nav-label">Tableau de bord</span>
+        </a>
+        <a href="{{ url_for('chatbot') }}" class="nav-item">
+          <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeChatBot.png') }}" alt="Chat Bot"></span>
+          <span class="nav-label">Chat Bot</span>
+        </a>
+        <a href="{{ url_for('info') }}" class="nav-item">
+          <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeInformations.png') }}" alt="Informations"></span>
+          <span class="nav-label">Informations</span>
+        </a>
+        <a href="{{ url_for('contact') }}" class="nav-item">
+          <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeContact.png') }}" alt="Contact"></span>
+          <span class="nav-label">Contact</span>
+        </a>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <h1 class="main-title">TABLEAU DE BORD</h1>
+      <div class="dashboard-grid">
+        
+        <div class="dashboard-card">
+          <h2>Rapport Power BI</h2>
+          <div class="dashboard-content">
+           <div style="width: 100%; display: flex; justify-content: center;">
+  <iframe 
+    src="http://laptop-uqulln4k/Reports/powerbi/test?rs:Embed=true" 
+    style="width: 95vw; height: 90vh; border: none; border-radius: 8px;">
+  </iframe>
+</div>
+
+          </div>
+        </div>
+
+        <div class="dashboard-card">
+          <h2>Menaces actives</h2>
+          <div class="dashboard-content">
+            <p>Visualisation des menaces en temps réel...</p>
+          </div>
+        </div>
+
+        <div class="dashboard-card">
+          <h2>Statistiques</h2>
+          <div class="dashboard-content">
+            <p>Analyse des données de sécurité...</p>
+          </div>
+        </div>
+
+        <div class="dashboard-card">
+          <h2>Alertes</h2>
+          <div class="dashboard-content">
+            <p>Suivi des alertes de sécurité...</p>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>CS-360 - Tableau de bord</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:500,700|Poppins:500,900" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+  <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-title-group">
+          <span class="sidebar-logo"><img src="{{ url_for('static', filename='images/logoCS.png') }}" alt="CS-360 Logo"></span>
+          <span class="sidebar-title">CS-360</span>
+        </div>
+      </div>
+      <nav class="nav-menu">
+        <a href="{{ url_for('index') }}" class="nav-item">
+          <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeAccueil.png') }}" alt="Accueil"></span>
+          <span class="nav-label">Accueil</span>
+        </a>
+        <a href="{{ url_for('dashboard') }}" class="nav-item active">
+          <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeTableauDeBord.png') }}" alt="Tableau de bord"></span>
+          <span class="nav-label">Tableau de bord</span>
+        </a>
+        <a href="{{ url_for('chatbot') }}" class="nav-item">
+          <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeChatBot.png') }}" alt="Chat Bot"></span>
+          <span class="nav-label">Chat Bot</span>
+        </a>
+        <a href="{{ url_for('prediction') }}" class="nav-item">
+          <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconePrediction.png') }}" alt="Prédiction"></span>
+          <span class="nav-label">Prédiction</span>
+        </a>
+        <a href="{{ url_for('info') }}" class="nav-item">
+          <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeInformations.png') }}" alt="Informations"></span>
+          <span class="nav-label">Informations</span>
+        </a>
+        <a href="{{ url_for('contact') }}" class="nav-item">
+          <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeContact.png') }}" alt="Contact"></span>
+          <span class="nav-label">Contact</span>
+        </a>
+      </nav>
+    </aside>
+    <main class="main-content">
+      <h1 class="main-title">TABLEAU DE BORD</h1>
+      <div class="dashboard-grid">
+        
+        <div class="dashboard-card">
+          <h2>Rapport Power BI</h2>
+          <div class="dashboard-content">
+           <div style="width: 100%; display: flex; justify-content: center;">
+   <iframe 
+    src="http://desktop-e8gvb1v/Reports/powerbi/test?rs:Embed=true" 
+    style="width: 80vw; height: 70vh; border: none; border-radius: 8px;"
+    title="Rapport Power BI">
+  </iframe>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+>>>>>>> 05238f3a83981a3c4a40aa1103d176ca2d031b9c

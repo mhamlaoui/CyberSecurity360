@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assistant Données 📊</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f9f9f9; }
+        .chat-box { border: 1px solid #ccc; padding: 15px; background: white; max-width: 600px; margin: auto; }
+        .message { margin: 10px 0; }
+        .user { color: blue; font-weight: bold; }
+        .bot { color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="chat-box">
+        <h2>💬 Assistant CSV + Graphiques</h2>
+
+        {% for sender, message in chat_history %}
+            <div class="message">
+                {% if sender == 'user' %}
+                    <span class="user">👤 Toi:</span> {{ message }}
+                {% elif sender == 'bot' and message == 'image' %}
+                    <span class="bot">🤖 Assistant:</span><br>
+                    <img src="{{ url_for('static', filename='chart.png') }}" alt="Graphique" width="100%">
+                {% else %}
+                    <span class="bot">🤖 Assistant:</span> {{ message }}
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Uploader CSV</button>
+        </form>
+
+        <form action="/" method="post">
+            <input type="text" name="prompt" placeholder="Pose ta question..." style="width: 80%;" required>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+</body>
+</html>

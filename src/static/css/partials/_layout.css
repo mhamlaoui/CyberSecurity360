@@ -1,0 +1,60 @@
+<<<<<<< HEAD
+/* Layout principal */
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  padding: 40px 30px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.main-title {
+  font-size: 2.3rem;
+  font-weight: 900;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 32px;
+  letter-spacing: 1px;
+}
+
+.main-intro {
+  max-width: 900px;
+  margin: 0 auto 48px auto;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+=======
+/* Layout principal */
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  padding: 40px 30px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.main-title {
+  font-size: 2.3rem;
+  font-weight: 900;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 32px;
+  letter-spacing: 1px;
+}
+
+.main-intro {
+  max-width: 900px;
+  margin: 0 auto 48px auto;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+>>>>>>> 05238f3a83981a3c4a40aa1103d176ca2d031b9c
+}

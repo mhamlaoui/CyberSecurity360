@@ -1,0 +1,392 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>CS-360 - Chat Bot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500,700|Poppins:500,900" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+              <span class="sidebar-logo"></span>
+              <div class="sidebar-title-group">
+                <span class="sidebar-title">CS-360</span>
+              </div>
+            </div>
+            <nav class="nav-menu">
+              <a href="{{ url_for('index') }}" class="nav-item">
+                <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeAccueil.png') }}" alt="Accueil"></span>
+                <span class="nav-label">Accueil</span>
+              </a>
+              <a href="{{ url_for('dashboard') }}" class="nav-item">
+                <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeTableauDeBord.png') }}" alt="Tableau de bord"></span>
+                <span class="nav-label">Tableau de bord</span>
+              </a>
+              <a href="{{ url_for('chatbot') }}" class="nav-item active">
+                <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeChatBot.png') }}" alt="Chat Bot"></span>
+                <span class="nav-label">Chat Bot</span>
+              </a>
+              <a href="{{ url_for('info') }}" class="nav-item">
+                <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeInformations.png') }}" alt="Informations"></span>
+                <span class="nav-label">Informations</span>
+              </a>
+              <a href="{{ url_for('contact') }}" class="nav-item">
+                <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeContact.png') }}" alt="Contact"></span>
+                <span class="nav-label">Contact</span>
+              </a>
+            </nav>
+          </aside>
+        <main class="main-content">
+            <h1 class="main-title">VOTRE ASSISTANT CYBERSECURITE</h1>
+            <div class="chat-container">
+                <div class="chat-header">
+                    AI Chatbot
+                </div>
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message bot-message">
+                        Hello! I'm your AI assistant. Ask me anything you'd like to know!
+                    </div>
+                    <div class="typing-indicator" id="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="message-input" placeholder="Type your message here..." autocomplete="off">
+                    <button id="send-button">Send</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const messageInput = document.getElementById('message-input');
+            const sendButton = document.getElementById('send-button');
+            const chatMessages = document.getElementById('chat-messages');
+            const typingIndicator = document.getElementById('typing-indicator');
+
+            function addMessage(message, isUser) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+                messageElement.classList.add(isUser ? 'user-message' : 'bot-message');
+                messageElement.textContent = message;
+                
+                chatMessages.insertBefore(messageElement, typingIndicator);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function showTypingIndicator() {
+                typingIndicator.style.display = 'block';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function hideTypingIndicator() {
+                typingIndicator.style.display = 'none';
+            }
+
+            async function sendMessage() {
+                const message = messageInput.value.trim();
+                if (!message) return;
+
+                addMessage(message, true);
+                messageInput.value = '';
+                showTypingIndicator();
+
+                try {
+                    const response = await fetch('/chat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ message })
+                    });
+
+                    const data = await response.json();
+                    hideTypingIndicator();
+                    addMessage(data.response, false);
+                } catch (error) {
+                    console.error('Error:', error);
+                    hideTypingIndicator();
+                    addMessage('Sorry, there was an error processing your request.', false);
+                }
+            }
+
+            sendButton.addEventListener('click', sendMessage);
+            
+            messageInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS-360 - Chat Bot</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .chat-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 80vh;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .chat-header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        .message {
+            margin-bottom: 15px;
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            line-height: 1.4;
+        }
+        .user-message {
+            background-color: #3498db;
+            color: white;
+            margin-left: auto;
+            border-bottom-right-radius: 5px;
+        }
+        .bot-message {
+            background-color: #e9e9eb;
+            color: #333;
+            border-bottom-left-radius: 5px;
+        }
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+        #message-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            font-size: 1rem;
+        }
+        #send-button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        #send-button:hover {
+            background-color: #1a252f;
+        }
+        .typing-indicator {
+            display: none;
+            padding: 10px 15px;
+            background-color: #e9e9eb;
+            border-radius: 18px;
+            margin-bottom: 15px;
+            width: fit-content;
+            border-bottom-left-radius: 5px;
+        }
+        .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            background-color: #666;
+            display: inline-block;
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: typing 1s infinite;
+        }
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+            margin-right: 0;
+        }
+        @keyframes typing {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500,700|Poppins:500,900" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+              <div class="sidebar-title-group">
+                <span class="sidebar-logo"><img src="{{ url_for('static', filename='images/logoCS.png') }}" alt="CS-360 Logo"></span>
+                <span class="sidebar-title">CS-360</span>
+              </div>
+            </div>
+            <nav class="nav-menu">
+                <a href="{{ url_for('index') }}" class="nav-item">
+                    <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeAccueil.png') }}" alt="Accueil"></span>
+                    <span class="nav-label">Accueil</span>
+                </a>
+                <a href="{{ url_for('dashboard') }}" class="nav-item">
+                    <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeTableauDeBord.png') }}" alt="Tableau de bord"></span>
+                    <span class="nav-label">Tableau de bord</span>
+                </a>
+                <a href="{{ url_for('chatbot') }}" class="nav-item active">
+                    <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeChatBot.png') }}" alt="Chat Bot"></span>
+                    <span class="nav-label">Chat Bot</span>
+                </a>
+                <a href="{{ url_for('prediction') }}" class="nav-item">
+                    <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconePrediction.png') }}" alt="Prédiction"></span>
+                    <span class="nav-label">Prédiction</span>
+                </a>
+                <a href="{{ url_for('info') }}" class="nav-item">
+                    <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeInformations.png') }}" alt="Informations"></span>
+                    <span class="nav-label">Informations</span>
+                </a>
+                <a href="{{ url_for('contact') }}" class="nav-item">
+                    <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeContact.png') }}" alt="Contact"></span>
+                    <span class="nav-label">Contact</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <h1 class="main-title">CHAT BOT</h1>
+            <div class="chat-container">
+                <div class="chat-header">
+                    Assistant IA
+                </div>
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message bot-message">
+                        Bonjour ! Je suis votre assistant IA. Posez-moi toutes vos questions !
+                    </div>
+                    <div class="typing-indicator" id="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="message-input" placeholder="Tapez votre message ici..." autocomplete="off">
+                    <button id="send-button">Envoyer</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const messageInput = document.getElementById('message-input');
+            const sendButton = document.getElementById('send-button');
+            const chatMessages = document.getElementById('chat-messages');
+            const typingIndicator = document.getElementById('typing-indicator');
+
+            function addMessage(message, isUser) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+                messageElement.classList.add(isUser ? 'user-message' : 'bot-message');
+                messageElement.textContent = message;
+                
+                // Insert before typing indicator
+                chatMessages.insertBefore(messageElement, typingIndicator);
+                
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function showTypingIndicator() {
+                typingIndicator.style.display = 'block';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function hideTypingIndicator() {
+                typingIndicator.style.display = 'none';
+            }
+
+            async function sendMessage() {
+                const message = messageInput.value.trim();
+                if (!message) return;
+
+                // Add user message to chat
+                addMessage(message, true);
+                
+                // Clear input
+                messageInput.value = '';
+                
+                // Show typing indicator
+                showTypingIndicator();
+
+                try {
+                    // Send message to server
+                    const response = await fetch('/chat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ message })
+                    });
+
+                    const data = await response.json();
+                    
+                    // Hide typing indicator
+                    hideTypingIndicator();
+                    
+                    // Add bot response to chat
+                    addMessage(data.response, false);
+                } catch (error) {
+                    console.error('Error:', error);
+                    hideTypingIndicator();
+                    addMessage('Sorry, there was an error processing your request.', false);
+                }
+            }
+
+            sendButton.addEventListener('click', sendMessage);
+            
+            messageInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+>>>>>>> 05238f3a83981a3c4a40aa1103d176ca2d031b9c

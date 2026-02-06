@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>CS-360 - Prédiction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500,700|Poppins:500,900" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-title-group">
+            <span class="sidebar-logo"><img src="{{ url_for('static', filename='images/logoCS.png') }}" alt="CS-360 Logo"></span>
+            <span class="sidebar-title">CS-360</span>
+          </div>
+        </div>
+        <nav class="nav-menu">
+          <a href="{{ url_for('index') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeAccueil.png') }}" alt="Accueil"></span>
+            <span class="nav-label">Accueil</span>
+          </a>
+          <a href="{{ url_for('dashboard') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeTableauDeBord.png') }}" alt="Tableau de bord"></span>
+            <span class="nav-label">Tableau de bord</span>
+          </a>
+          <a href="{{ url_for('chatbot') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeChatBot.png') }}" alt="Chat Bot"></span>
+            <span class="nav-label">Chat Bot</span>
+          </a>
+          <a href="{{ url_for('prediction') }}" class="nav-item active">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconePrediction.png') }}" alt="Prédiction"></span>
+            <span class="nav-label">Prédiction</span>
+          </a>
+          <a href="{{ url_for('info') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeInformations.png') }}" alt="Informations"></span>
+            <span class="nav-label">Informations</span>
+          </a>
+          <a href="{{ url_for('contact') }}" class="nav-item">
+            <span class="nav-icon"><img src="{{ url_for('static', filename='images/icones/iconeContact.png') }}" alt="Contact"></span>
+            <span class="nav-label">Contact</span>
+          </a>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <h1 class="main-title">PRÉDICTION DES PERTES FINANCIÈRES</h1>
+        <div class="prediction-container">
+          <form method="POST" action="{{ url_for('prediction') }}" class="prediction-form">
+            <div class="form-group">
+              <label for="attack_type">Type d'attaque :</label>
+              <select id="attack_type" name="attack_type" required>
+                <option value="">Sélectionnez un type d'attaque</option>
+                <option value="DDoS">DDoS</option>
+                <option value="Phishing">Phishing</option>
+                <option value="SQL Injection">SQL Injection</option>
+                <option value="Ransomware">Ransomware</option>
+                <option value="Malware">Malware</option>
+                <option value="Man-in-the-Middle">Man-in-the-Middle</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="target_industry">Industrie ciblée :</label>
+              <select id="target_industry" name="target_industry" required>
+                <option value="">Sélectionnez une industrie</option>
+                <option value="IT">Technologies de l'Information</option>
+                <option value="Banking">Banque</option>
+                <option value="Healthcare">Santé</option>
+                <option value="Retail">Commerce de détail</option>
+                <option value="Education">Éducation</option>
+                <option value="Telecommunications">Télécommunications</option>
+                <option value="Government">Gouvernement</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="attack_source">Source de l'attaque :</label>
+              <select id="attack_source" name="attack_source" required>
+                <option value="">Sélectionnez une source</option>
+                <option value="Nation-state">État-Nation</option>
+                <option value="Unknown">Inconnu</option>
+                <option value="Insider">Interne</option>
+                <option value="Hacker Group">Groupe de Hackers</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="vulnerability_type">Type de vulnérabilité :</label>
+              <select id="vulnerability_type" name="vulnerability_type" required>
+                <option value="">Sélectionnez une vulnérabilité</option>
+                <option value="Zero-day">Zero-day</option>
+                <option value="Social Engineering">Ingénierie Sociale</option>
+                <option value="Unpatched Software">Logiciel Non Patché</option>
+                <option value="Weak Passwords">Mots de Passe Faibles</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="defense_mechanism">Mécanisme de défense :</label>
+              <select id="defense_mechanism" name="defense_mechanism" required>
+                <option value="">Sélectionnez un mécanisme</option>
+                <option value="Antivirus">Antivirus</option>
+                <option value="VPN">VPN</option>
+                <option value="Encryption">Chiffrement</option>
+                <option value="Firewall">Pare-feu</option>
+                <option value="AI-based Detection">Détection basée sur l'IA</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="affected_users">Nombre d'utilisateurs affectés :</label>
+              <input type="number" id="affected_users" name="affected_users" required min="1" step="1">
+              <small>Nombre estimé d'utilisateurs qui pourraient être touchés</small>
+            </div>
+
+            <div class="form-group">
+              <label for="resolution_time">Temps de résolution (en heures) :</label>
+              <input type="number" id="resolution_time" name="resolution_time" required min="0" step="0.1">
+              <small>Durée estimée pour résoudre l'incident</small>
+            </div>
+
+            <div class="form-group">
+              <label for="year">Année :</label>
+              <input type="number" id="year" name="year" required min="2015" max="2024" value="2024">
+              <small>Année de l'incident (entre 2015 et 2024)</small>
+            </div>
+
+            <button type="submit" class="btn-primary">Faire une prédiction</button>
+          </form>
+
+          {% if prediction_result %}
+            <div class="prediction-result">
+              {% if prediction_result.error %}
+                <div class="error-icon">❌</div>
+                <div class="error-message">
+                  {{ prediction_result.error }}
+                </div>
+              {% else %}
+                <div class="success-icon">✅</div>
+                <h2>Résultat de la prédiction</h2>
+                <div class="result-value">
+                  Perte estimée par utilisateur : {{ prediction_result.prediction }} €
+                </div>
+                <div class="confidence-interval">
+                  <strong>Intervalle de confiance (90%) :</strong><br>
+                  Minimum : {{ prediction_result.confidence_low }} €<br>
+                  Maximum : {{ prediction_result.confidence_high }} €
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </main>
+    </div>
+</body>
+</html>
